@@ -1,2 +1,6 @@
-export const increment = (state, payload) => state + 1;
-export const apiAnwser = (state, payload) => state + 100;
+import { registerAction } from '../airan'
+
+export const increment  =
+    registerAction("increment", (state, payload) => state + 1);
+
+registerAction("apiAnwser", (state, payload) => state + 100);

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { AiranConnector } from '../airan';
-
+import { counter } from '../Subscriptions';
+import { increment } from '../Actions';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
+    console.log("SCS", counter);
     return (
       <div className="App">
         <header className="App-header">
@@ -13,17 +15,10 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <AiranConnector counter="::counter">
-            <p>{counter}</p>
-          </AiranConnector>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          {/*<AiranConnector counter="::counter">*/}
+            <p>Counter: {counter()}</p>
+            <button onClick={increment}>Increment</button>
+          {/*</AiranConnector>*/}
         </header>
       </div>
     );
